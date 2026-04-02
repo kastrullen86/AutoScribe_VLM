@@ -13,6 +13,7 @@ An adaptive media-to-markdown pipeline designed to generate high-quality sources
 ## 🔑 Prerequisites (Important!)
 
 To bypass Google Colab IP rate-limits and prevent the AI models from freezing during download, you must provide a Hugging Face Token:
+
 1. Create a free account at [Hugging Face](https://huggingface.co/).
 2. Go to Settings > Access Tokens and generate a **Read** token.
 3. In Google Colab, click the **🔑 Secrets** icon (left sidebar).
