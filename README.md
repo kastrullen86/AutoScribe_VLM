@@ -1,10 +1,10 @@
 # AutoScribe VLM
 
-An adaptive media-to-markdown pipeline designed to generate high-quality sources for **NotebookLM**. It automatically handles transcription for spoken audio and switches to visual analysis (VLM) for silent or visual-only videos.
+An adaptive media-to-markdown pipeline designed to generate high-quality sources for **NotebookLM**. It automatically handles transcription for spoken audio and switches to visual frame analysis (VLM) for silent or visual-only videos.
 
 ## 🚀 Features
 
-- **Multi-Source Support:** Works with YouTube (videos/playlists), Google Drive files, or local uploads via `yt-dlp`.
+- **Multi-Source Support:** Explicitly handles both YouTube (via `yt-dlp` with automated bot-bypass) and Google Drive files.
 - **Adaptive Processing:** - **Whisper (Large-v3):** High-speed, high-accuracy transcription for audio.
   - **Moondream2 VLM:** Visual frame analysis for silent videos or demos.
 - **Local-First Architecture (High Performance):** Executes all I/O operations and dependency installations on Colab's local ephemeral NVMe storage. This eliminates Google Drive network bottlenecks and prevents "silent freezes" during heavy processing.
@@ -28,9 +28,9 @@ To bypass Google Colab IP rate-limits and prevent the AI models from freezing du
 
 ## 📖 Usage
 
-1. Run **Block 1** to mount Google Drive, setup local workspaces, and install dependencies to the local environment.
-2. Configure your source (URL or File) in **Block 2**.
-3. Execute **Block 3** for AI processing (All processing is done locally for maximum speed).
+1. Run **Block 1** to mount Google Drive, setup local workspaces, and install dependencies.
+2. Configure your source in **Block 2**. Select either `URL` or `Google_Drive` from the dropdown, and fill in the corresponding explicitly marked field.
+3. Execute **Block 3** for AI processing. (All processing is done on the local NVMe for maximum speed).
 4. Run **Block 4** to export the compiled Markdown files to your Drive and cleanly shut down the session.
 
 ## 📜 License
